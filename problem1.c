@@ -13,7 +13,7 @@ double calculateTheta(double wavelength_nm, int m, double a_um) {
 
     double radians = asin(sinTheta);
 
-    return radians * (180.0 / 3.1416);  // degree conversion
+    return radians * (180.0 / 3.1416);   // degree conversion
 }
 int main() {
 
@@ -48,7 +48,19 @@ int main() {
             printf("Theta[%d] = %.2f degrees\n", i, theta[i]);
         }
     }
-    
+
+
+    // Determine which slit bent light the most //
+    int max = theta[1];
+    int index = 1;
+    for (int i = 2; i < 4; i++) {
+        if (theta[i] > max) {
+            max = theta[i];
+            index = i;
+        }
+    }
+
+    printf("Slit a[%d] bent the light the most.\n", index);
 
 
     return 0;
