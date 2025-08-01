@@ -10,11 +10,11 @@ int main() {
     double degree = 65.0;
     double radian = degree * (3.1416 / 180.0);  // Convert degrees to radians
 
-    double sinTheta = sin(radian);   // Correct: use sin() function
+    double sinTheta = sin(radian);   // use sin() function
 
     double d = (m1 * lambda1_m) / sinTheta;
 
-    printf("d = %.10lf meters\n", d);  // Print with high precision
+    printf("d = %.10lf meters\n", d);  
 
   //.....Now.....//
 
@@ -25,7 +25,7 @@ double lambda2_m = lambda2_nm * 1e-9; // Convert nm to meters
 double sin_Theta2 = (m2 * lambda2_m) / d;
 
     if (sin_Theta2 > 1.0)
-        sin_Theta2 = 1.0;  // Limit sin_Theta2 to 1.0
+        return -1;
 
     double radians = asin(sin_Theta2);
 
